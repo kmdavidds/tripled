@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', path='css/styles.css') }}"
+    />
+    <title>TRIPLED</title>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav>
+      <ul>
+        <li>
+          <div class="profile_nav">
+            <p>SEKOLAH UNGGULAN AL-YA’LU</p>
+            <img
+              src="{{ url_for('static', path='images/expand_menu.svg') }}"
+              id="expand_menu"
+              alt=""
+            />
+          </div>
+        </li>
+        <div class="navbar_menu">
+          <li>
+            <a href="#" id="home_navbar">Home</a>
+          </li>
+          <li>
+            <a href="/datasiswa" id="datasiswa_navbar">Data Siswa</a>
+          </li>
+        </div>
+      </ul>
+    </nav>
+
+    <div class="main_content">
+      <!-- TABEL INFORMASI PENGENDARA-->
+      <aside>
+        <div class="kendaraan_terdeteksi_header">
+          <p>KENDARAAN PENJEMPUT TERDETEKSI</p>
+        </div>
+        <div class="tabel_kendaraan_container">
+          <table class="tabel_kendaraan"></table>
+        </div>
+      </aside>
+
+      <!-- VIDEO DAN IDENTITAS KAMERA-->
+      <main class="video_section_container">
+        <video
+          src="{{ url_for('static', path=videopath) }}"
+          autoplay
+          muted
+        ></video>
+        <div class="informasi_zona">
+          <div class="info_zona_left">
+            <p class="info_lokasi">
+              <span>Lokasi:</span> Jalan Soekarno Hatta No.123 (200 m)
+            </p>
+            <p class="info_camera"><span>Camera:</span> 140.213.220.88</p>
+          </div>
+          <div class="select_container">
+            <label for="ip_camera_input">Pilih IP Camera: </label>
+            <div class="custom_select">
+              <select id="camera_list" onchange="navigate(this)">
+                <option value="" selected disabled hidden>Pilih</option>
+                {% for video in videos %}
+                <option>{{ video }}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script>
+      function navigate(dd) {
+        window.location.href = `/homepage/${dd.value}`
+      }
+    </script>
+  </body>
+</html>

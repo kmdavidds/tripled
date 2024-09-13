@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRIPLED APP</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='css/signup.css') }}">
+</head>
+<body>
+    <div class="main_container">
+        <div class="form_container">
+            <img src="{{ url_for('static', path='images/mainlogo.svg') }}" alt="" id="main_logo">
+            <div class="provinsi_kab_container">
+                <div class="provinsi_container">
+                    <label for="provinsi_input">Provinsi</label>
+                    <select id="provinsi_list">
+                        <option value="" disabled selected>-- Pilih Provinsi --</option>
+                        <option value="JAWA TIMUR">JAWA TIMUR</option>
+                    </select>
+                </div>
+                <div class="kab_container">
+                    <label for="kab_input">Kabupaten</label>
+                    <select id="kab_list">
+                        <option value="" disabled selected>-- Pilih Kabupaten --</option>
+                        <option value="KOTA MALANG">KOTA MALANG</option>
+                    </select>
+                </div>
+            </div>
+            <div class="asal_sekolah_container">
+                <label for="asal_sekolah_input">Asal Sekolah</label>
+                <select id="asal_sekolah_list">
+                    <option value="" disabled selected>-- Pilih Asal Sekolah --</option>
+                    <option value="SEKOLAH UNGGULAN AL-YA’LU">SEKOLAH UNGGULAN AL-YA'LU</option>
+                </select>
+            </div>
+            <div class="email_container">
+                <label for="email_input">Email</label>
+                <input type="email" name="" id="email_input" placeholder="Masukkan Email">
+            </div>
+            <div class="password_container">
+                <label for="password_input">Password</label>
+                <input type="password" name="" id="password_input" placeholder="Masukkan Password">
+            </div>
+            <a href="/"><button id="daftar_button">Daftar</button></a>
+            <p id="sudah_punya_akun">Sudah punya akun? <a href="/"><span id="masuk_span"> Masuk</span></a></p>
+        </div>
+        <div class="icons_container">
+            <img src="{{ url_for('static', path='images/iconhome.svg') }}" alt="">
+            <p id="welcome_text">Identify Easier. No Traffic.</p>
+            <p id="its_time_text">Start your worry-free traffic management system in the simplest way!</p>
+        </div>
+        <img src="{{ url_for('static', path='images/iconarrow.svg') }}" alt="" id="iconarrow">
+        <img src="{{ url_for('static', path='images/iconpop.svg') }}" alt="" id="iconpop">
+    </div>
+    <script>
+        document.getElementById("daftar_button").addEventListener("click", function(){
+            alert("Pendaftaran berhasil! Silahkan login untuk melanjutkan.");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRIPLED APP</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='css/loginpage.css') }}">
+</head>
+<body>
+    <div class="main_container">
+        <div class="form_container">
+            <img src="{{ url_for('static', path='images/mainlogo.svg') }}" alt="" id="main_logo">
+            <div class="asal_sekolah_container">
+                <label for="asal_sekolah_input">Asal Sekolah</label>
+                <select id="asal_sekolah_list">
+                    <option value="" disabled selected>-- Pilih Asal Sekolah --</option>
+                    <option value="SEKOLAH UNGGULAN AL-YA’LU">SEKOLAH UNGGULAN AL-YA’LU</option>
+                </select>
+            </div>
+            <div class="password_container">
+                <label for="password_input">Password</label>
+                <input type="password" name="" id="password_input" placeholder="Masukkan Password">
+            </div>
+            <div class="ingat_akun_lupa_container">
+                <div class="ingat_akun_container">
+                    <input type="checkbox" name="" id="ingat_akun_check">
+                    <label for="ingat_akun_check">Ingat akun</label>
+                </div>
+                <p id="lupa_password">Lupa Password?</p>
+            </div>
+            <a href="/homepage"><button id="masuk_button">Masuk</button></a>
+            <p id="belum_punya_akun">Belum punya akun? <a href="/signup"><span id="daftar_span"> Daftar</span></a></p>
+        </div>
+        <div class="icons_container">
+            <img src="{{ url_for('static', path='images/iconhome.svg') }}" alt="">
+            <p id="welcome_text">Welcome Back!</p>
+            <p id="its_time_text">It’s time to go back to our easy-to-use traffic management system!</p>
+        </div>
+        <img src="{{ url_for('static', path='images/iconarrow.svg') }}" alt="" id="iconarrow">
+        <img src="{{ url_for('static', path='images/iconpop.svg') }}" alt="" id="iconpop">
+    </div>
+</body>
+</html>

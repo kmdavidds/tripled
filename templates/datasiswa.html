@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/datasiswa.css') }}">
+    <title>Data Siswa</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>
+                <div class="profile_nav">
+                    <p>
+                        SEKOLAH UNGGULAN AL-YA’LU
+                    </p>
+                    <img src="{{ url_for('static', path='images/expand_menu.svg') }}" id="expand_menu" alt="">
+                </div>
+            </li>
+            <div class="navbar_menu">
+                <li>
+                    <a href="/homepage" id="home_navbar">Home</a>
+                </li>
+                <li>
+                    <a href="/datasiswa" id="datasiswa_navbar">Data Siswa</a>
+                </li>
+            </div>
+        </ul>
+    </nav>
+
+    <!--Buttons-->
+    <div class="buttons_container">
+        <div class="buttons_left">
+            <button id="editbtn"><img src="{{ url_for('static', path='images/editicon.svg') }}" alt="">Edit</button>
+            <button id="filterbtn"><img src="{{ url_for('static', path='images/filtericon.svg') }}" alt="">Filter</button>
+            <button id="addbtn">+ Input Siswa</button>
+        </div>
+        <div class="search_container"><img src="{{ url_for('static', path='images/search.svg') }}" alt=""><input type="text" placeholder="Search.."></div>
+    </div>
+
+    <!--TABEL-->
+    <div class="table_container">
+        <table class="table_siswa">
+            <thead>
+                <tr id="tr_first">
+                    <th>Nama</th>
+                    <th>NIS</th>
+                    <th>Kelas</th>
+                    <th>Nama Penjemput</th>
+                    <th>Plat Kendaraan</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+    <!-- MODAL -->
+    <div class="modal_container">
+        <div class="modal_content">
+            <span class="close">&times;</span>
+            <h2>Input Data Siswa</h2>
+            <form action="">
+                <div class="input_container">
+                    <label for="nama_input">Nama</label>
+                    <input type="text" id="nama_input" placeholder="Masukkan Nama">
+                </div>
+                <div class="input_container">
+                    <label for="nis_input">NIS</label>
+                    <input type="text" id="nis_input" placeholder="Masukkan NIS">
+                </div>
+                <div class="input_container">
+                    <label for="kelas_input">Kelas</label>
+                    <input type="text" id="kelas_input" placeholder="Masukkan Kelas">
+                </div>
+                <div class="input_container">
+                    <label for="nama_penjemput_input">Nama Penjemput</label>
+                    <input type="text" id="nama_penjemput_input" placeholder="Masukkan Nama Penjemput">
+                </div>
+                <div class="input_container">
+                    <label for="plat_kendaraan_input">Plat Kendaraan</label>
+                    <input type="text" id="plat_kendaraan_input" placeholder="Masukkan Plat Kendaraan">
+                </div>
+                <button id="submitbtn">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
